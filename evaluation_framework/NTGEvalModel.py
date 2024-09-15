@@ -26,7 +26,7 @@ class NTGEvalModel(EvalModel):
     def eval_with_cross_validation(self, dataset, opt: dict, k: int = 5):
         name = (f'{"DP-" if opt["dp"] else ""}NTG_{str(dataset)}_{opt["lr_g"]:.0e}_{opt["n_critic"]}xD{opt["lr_d"]:.0e}_'
                 f'L{opt["latent_dim"]}_N{opt["noise_dim"]}_B{opt["batch_size"]}_{"WGAN" if opt["wgan"] else "GAN"}'
-                f'{"-GP" if opt["gradient_penalty"] and not opt["lp"] else ""}{"-LP" if opt["lp"] else ""}')
+                f'{"-GP" if opt["gradient_penalty"] and not opt["lp"] else ""}{"-LP" if opt["lp"] else ""}-EPS_"{opt["epsilon"]:.0e}')
 
         if opt["dp"]:
             print("Using DP NoiseTrajGAN")

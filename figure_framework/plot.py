@@ -228,7 +228,8 @@ def load_dcgan(opt, eval_mode=True):
         privacy_accountant='prv',
         gpu=opt["gpu"],
         max_grad_norm=opt["max_grad_norm"],
-        eval_mode=eval_mode
+        eval_mode=eval_mode,
+        epsilon=opt["epsilon"] if opt["dp"] else None,
     )
 
     return opt, dcgan

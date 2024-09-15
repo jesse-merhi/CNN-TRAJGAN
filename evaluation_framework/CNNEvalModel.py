@@ -44,6 +44,7 @@ class CNNEvalModel(EvalModel):
                 privacy_accountant=ACCOUNTANT,
                 gpu=opt["gpu"],
                 max_grad_norm=opt["max_grad_norm"],
+                epsilon=opt["epsilon"] if opt["dp"] else None,
             )
             dcgan.training_loop()
             count += 1

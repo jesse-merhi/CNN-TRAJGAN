@@ -75,6 +75,7 @@ class DCGan(TrajGAN):
               f"Loss: {'WGAN' if self.wgan else 'Vanilla GAN'}"
               f"{'-GP'if self.gradient_penalty and not self.lipschitz_penalty else ''}"
               f"{'-LP'if self.lipschitz_penalty else ''}",
+              f"-EPS_{epsilon:.0e}",
               "#" * 20)
         self.opt['dp_in_dis'] = opt["dp_in_dis"]
         self.opt['privacy_accountant'] = privacy_accountant
@@ -107,7 +108,7 @@ class DCGan(TrajGAN):
             name = (f"{'DP-' if self.opt['dp'] else ''}DCGAN_{self.opt['file']}_{self.opt['epochs']}_{self.n_critic}xD_"
                     f"LR-{self.opt['lr']:.0e}_Sched-{self.opt['schedule']}_GFac-{self.opt['g_factor']}_"
                     f"{'WGAN' if opt['wgan'] else 'GAN'}"
-                    f'{"-GP" if opt["gradient_penalty"] and not opt["lp"] else ""}{"-LP" if opt["lp"] else ""}')
+                    f'{"-GP" if opt["gradient_penalty"] and not opt["lp"] else ""}{"-LP" if opt["lp"] else ""}-EP_{self.opt["epsilon"]:.0e}')
 
         # Call Superclass
         super().__init__(
