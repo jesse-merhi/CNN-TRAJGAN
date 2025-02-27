@@ -33,7 +33,22 @@ Paper artifacts for PST'24 paper "Synthetic Trajectory Generation Through Convol
 
 ## Citation
 
-[To be added] 
+```bibtex
+@inproceedings{MBK24,
+  title = {Synthetic Trajectory Generation through Convolutional Neural Networks},
+  booktitle = {2024 21st {{Annual International Conference}} on {{Privacy}}, {{Security}} and {{Trust}} ({{PST}})},
+  author = {Merhi, Jesse and Buchholz, Erik and Kanhere, Salil S.},
+  year = {2024},
+  month = aug,
+  pages = {1--12},
+  publisher = {IEEE},
+  series = {{{PST}}'24},
+  volume = {21},
+  address = {Sydney, NSW, Australia},
+  doi = {10.1109/PST62714.2024.10788061},
+  langid = {english}
+}
+```
 
 Accepted at the [21st Annual International Conference on Privacy, Security, and Trust (PST2024)](https://pstnet.ca/).
 
